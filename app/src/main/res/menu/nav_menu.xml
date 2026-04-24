@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/icon_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_smartphones"
+            android:icon="@drawable/icon_smartphones"
+            android:title="Smartphones" />
+        <item
+            android:id="@+id/nav_eletronics"
+            android:icon="@drawable/icon_eletronics"
+            android:title="Eletrodomesticos" />
+        <item
+            android:id="@+id/nav_tvs"
+            android:icon="@drawable/icon_tv"
+            android:title="TV e AV" />
+        <item
+            android:id="@+id/nav_computadores"
+            android:icon="@drawable/icon_computer"
+            android:title="Computadores e munitores" />
+    </group>
+
+</menu>

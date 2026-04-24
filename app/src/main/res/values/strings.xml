@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Samsung Store</string>
+    <string name="nov_open">Abrindo Menu</string>
+    <string name="nav_close">Fechando Menu</string>
+</resources>
