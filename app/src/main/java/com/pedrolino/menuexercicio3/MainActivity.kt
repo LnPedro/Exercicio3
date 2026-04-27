@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.os.UserManager
 import android.view.Gravity
 import android.view.MenuItem
+import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.NavigationRes
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -30,17 +32,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(binding.root)
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
-        WindowInsetsControllerCompat(window,window.decorView).hide(WindowInsetsCompat.Type.statusBars())
+        WindowInsetsControllerCompat(
+            window,
+            window.decorView
+        ).hide(WindowInsetsCompat.Type.statusBars())
         setSupportActionBar(binding.toolbar)
 
-        val toogle = ActionBarDrawerToggle(this, binding.drawerlayout, binding.toolbar, R.string.nav_open, R.string.nav_close)
+        val toogle = ActionBarDrawerToggle(
+            this,
+            binding.drawerlayout,
+            binding.toolbar,
+            R.string.nav_open,
+            R.string.nav_close
+        )
         binding.drawerlayout.addDrawerListener(toogle)
         toogle.syncState()
 
         binding.navigationDrawer.setNavigationItemSelectedListener(this)
 
         binding.bottomNavigation.setOnItemSelectedListener { item ->
-            when(item.itemId){
+            when (item.itemId) {
                 R.id.nav_smartphones -> openFragment(SmartphonesFragment())
                 R.id.nav_eletronics -> openFragment(eletronicsFragment())
                 R.id.nav_acessorios -> openFragment(accessoriesFragment())
@@ -48,18 +59,28 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 R.id.nav_computadores -> openFragment(ComputersFragment())
             }
             true
-
-            fragmentManager = supportFragmentManager
-            openFragment(HomeFragment())
-
         }
 
 
+        fragmentManager = supportFragmentManager
+        openFragment(HomeFragment())
 
+        binding.fab.setOnClickListener {
+            Toast.makeText(this, "Categorias", Toast.LENGTH_SHORT).show()
+        }
+
+        onBackPressedDispatcher.addCallback(this) {
+            if (binding.drawerlayout.isDrawerOpen(GravityCompat.START)) {
+                binding.drawerlayout.closeDrawer(GravityCompat.START)
+
+            } else {
+                finish()
+            }
+        }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
+        when (item.itemId) {
             R.id.nav_smartphones -> openFragment(SmartphonesFragment())
             R.id.nav_eletronics -> openFragment(eletronicsFragment())
             R.id.nav_acessorios -> openFragment(accessoriesFragment())
@@ -72,8 +93,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
 
-
-    private fun openFragment(fragment: Fragment){
+    private fun openFragment(fragment: Fragment) {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragment_container, fragment)
         fragmentTransaction.commit()

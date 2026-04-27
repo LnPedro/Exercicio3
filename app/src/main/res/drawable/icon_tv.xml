@@ -11,7 +11,6 @@
   <path
       android:strokeWidth="1"
       android:pathData="M689.9,756.6c13.2,9.7 20.2,28 20.2,28H318.8s7,-18.3 20.2,-28h350.9zM122.1,252.3v419.9c0,15.7 12.5,28.3 27.9,28.3h728.9c15.5,0 27.9,-12.5 27.9,-28.3V252.3c0,-15.7 -12.5,-28.3 -27.9,-28.3H150c-15.5,0.1 -27.9,12.6 -27.9,28.3z"
-      android:fillColor="#c2c2c22c2c2"
       android:strokeColor="#ededed"/>
   <path
       android:strokeWidth="1"
@@ -21,6 +20,5 @@
   <path
       android:strokeWidth="1"
       android:pathData="M178.1,307.9v308.8c0,15.3 12.5,27.8 27.9,27.8h616.8c15.4,0 27.9,-12.5 27.9,-27.8V307.9c0,-15.3 -12.5,-27.8 -27.9,-27.8H206.1c-15.4,0 -28,12.5 -28,27.8z"
-      android:fillColor="#c2c2c22c2c2"
       android:strokeColor="#ededed"/>
 </vector>
