@@ -6,17 +6,18 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/icon_home"
-            android:title="Home" />
-        <item
             android:id="@+id/nav_smartphones"
             android:icon="@drawable/icon_smartphones"
             android:title="Smartphones" />
         <item
             android:id="@+id/nav_eletronics"
             android:icon="@drawable/icon_eletronics"
-            android:title="Eletrodomesticos" />
+            android:title="Eletrodomésticos" />
+        <item
+            android:id="@+id/nav_acessorios"
+            android:icon="@drawable/icon_accessories"
+            android:title="Acessórios" />
+
         <item
             android:id="@+id/nav_tvs"
             android:icon="@drawable/icon_tv"
